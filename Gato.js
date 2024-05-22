@@ -35,7 +35,24 @@ function checkWin(cells) {
         }
     }
 
-    return false; // Sin ganador aún
+    // Verifica si hay empate
+    if (checkEmpate(cells)) {
+        // No hay ganador
+        return false;
+    }
+}
+
+
+function checkEmpate(cells) {
+    // Verifica si todas las celdas están ocupadas
+    const todasOcupadas = Array.from(cells).every(cell => cell.textContent);
+
+    if (todasOcupadas) {
+        alert('¡Empate! No hay ganador.');
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function turnoCPU(cells) {
