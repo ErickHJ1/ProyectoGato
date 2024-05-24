@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll('.cell');
 let jugador = 'X';
 let cpu = 'O';
+let btn = document.getElementById('btnReset')
 
 cells.forEach(cell => {
     cell.addEventListener('click', () => {
@@ -13,7 +14,7 @@ cells.forEach(cell => {
                 alert(`El jugador ganó!`);
             } else {
                 // Turno de la CPU después del jugador humano
-                setTimeout(() => turnoCPU(cells), 500); // Agrega un retraso para simular la decisión de la CPU
+                setTimeout(() => turnoCPU(cells), 2100); // Agrega un retraso para simular la decisión de la CPU
             }
         }
     });
@@ -70,7 +71,6 @@ function turnoCPU(cells) {
         // Verifica si alguien ganó después del turno de la CPU
         if (checkWin(cells)) {
             alert(`¡La CPU ganó!`);
-            
         }
     }
 }
@@ -111,4 +111,12 @@ function buscarFilaBloqueada(cells, celdasDisponibles) {
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columnas
         [0, 4, 8], [2, 4, 6]             // Diagonales
     ];
+}
+
+function reiniciar(btn) {
+    location.reload()
+}
+
+function byebye() {
+    document.getElementById('music').play();
 }
