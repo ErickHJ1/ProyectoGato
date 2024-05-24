@@ -9,7 +9,7 @@
     <h1>Tic Tac Toe</h1>
 </div>
 <body>
-    <div class="tablero">
+    <div class="tablero" onclick="byebye()">
     <div class="cell" id="1"></div>
     <div class="cell" id="2"></div>
     <div class="cell" id="3"></div>
@@ -22,6 +22,7 @@
 </div>
     <script src="/Gato.js"></script>
     <link rel="stylesheet" href="/Gato.css">
-    <button onclick="shutdown()">Reiniciar</button>
+    <button id="btnReset" onclick="reiniciar()">Reiniciar</button>
+    <audio id="music" src="/AUD-20240523-WA0134.aac"></audio>
 </body>
 </html>
